@@ -1,0 +1,168 @@
+:root {
+  --dark-color: #19283f;
+  --green-color: #33d1cc;
+  --red-color: #ff3150;
+  --yellow-color: #ffc400;
+  --section-color: #eff7fa;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+.main-btn {
+  color: var(--yellow-color);
+  background-color: var(--red-color);
+  border-color: var(--red-color);
+  padding: 0.5rem 1rem;
+}
+.main-title::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 2px;
+  left: 50%;
+  bottom: -20px;
+  transform: translateX(-50%);
+  background-color: var(--green-color);
+}
+/* Start Navbar */
+.navbar {
+  background-color: var(--dark-color);
+}
+.navbar .navbar-nav .nav-link {
+  color: white;
+}
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:focus,
+.navbar .navbar-nav .nav-link:hover {
+  color: var(--green-color);
+}
+.navbar .search {
+  border-left: 1px solid var(--green-color);
+}
+.navbar .search svg {
+  color: var(--green-color);
+}
+.navbar .navbar-toggler {
+  color: white;
+  border-color: white;
+}
+.navbar .navbar-toggler:focus {
+  box-shadow: none;
+}
+/* hena de mmken nst5dm al aria fe 2nna n3mel ay 7aga bs fe js a7sn */
+.navbar .navbar-toggler[aria-expanded="true"] {
+  border-color: var(--green-color);
+  color: var(--green-color);
+}
+/* End Navbar */
+/* Start Landing */
+.landing {
+  background-color: var(--dark-color);
+  min-height: calc(100vh - 72px);
+}
+/* End Landing */
+/* Start Features */
+.features .icon-holder {
+  height: 200px;
+}
+.features .icon-holder .number {
+  font-size: 12rem;
+  color: var(--section-color);
+}
+.features .icon-holder .icon {
+  color: var(--green-color);
+}
+.features .row h4 {
+  color: var(--yellow-color);
+}
+/* End Features */
+/* Start Our Work */
+.our-work {
+  background-color: var(--section-color);
+}
+.our-work ul .active {
+  background-color: var(--red-color);
+  color: var(--yellow-color);
+}
+.our-work ul li {
+  cursor: pointer;
+  transition: 0.3s;
+}
+.our-work ul li:not(.active):hover {
+  color: var(--red-color);
+}
+.our-work .row .box {
+  cursor: pointer;
+}
+.our-work .row .box::before {
+  content: attr(data-work);
+  position: absolute;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: -50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  background-color: #00ffff87;
+  transition: 0.3s;
+}
+.our-work .row .box:hover::before {
+  left: 50%;
+}
+/* End Our Work */
+/* Start Team */
+.team {
+  background-color: var(--section-color);
+}
+.team h2 {
+  color: var(--yellow-color);
+}
+.team .box h4 {
+  background-color: var(--green-color);
+}
+/* End Team */
+/* Start Start Project */
+.project {
+  background-color: var(--dark-color);
+}
+/* End Start Project */
+/* Start Subscribe */
+.subscribe input[type="text"]:focus {
+  outline: none;
+}
+.subscribe ::placeholder {
+  color: white;
+}
+.subscribe input[type="submit"] {
+  background-color: var(--dark-color);
+  color: var(--yellow-color);
+}
+/* End Subscribe */
+/* Start Footer */
+footer {
+  background-color: var(--dark-color);
+}
+footer .graphberry {
+  color: var(--green-color);
+}
+footer .inc {
+  color: var(--yellow-color);
+}
+footer .facebook {
+  background-color: #1877f2;
+}
+footer .twitter {
+  background-color: #1da1f2;
+}
+footer .linkedin {
+  background-color: #0077b5;
+}
+footer .youtube {
+  background-color: #ff0000;
+}
+/* End Footer */

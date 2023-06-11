@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Special Design</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- <link rel="stylesheet" href="css/master-editor.css" /> -->
+    <link rel="stylesheet" href="css/master.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <script src="js/moment.js"></script>
+    <!-- da 3shan lw 3ayzeen n3mel lo8at le al most5dm -->
+    <script src="js/moment-with-locales.min.js"></script>
+    <!-- da lw 3ayzen nst5dmo mn server bs hy3mel override 3la locales -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script> -->
+  </head>
+  <!-- ما شاء الله شرح جميل جزاك الله عنا خير الجزاء, ويحشرك مع الصديقين والشهداء والصالحين   -->
+  <body>
+    <div class="loader-container bg-light w-100 h-100 position-absolute top-0 start-0">
+      <div class="dotted-loader rounded-circle position-absolute top-50 start-50"></div>
+    </div>
+    <div class="go-up position-fixed">
+      <i class="fas fa-angle-double-up fa-2x"></i>
+    </div>
+    <!-- Start Setting Box -->
+    <div class="settings-box position-fixed top-0 bg-white border border-white">
+      <div class="toggle-setting position-absolute bg-white text-center fs-5">
+        <i class="fa fa-gear py-2 px-0 icon-gear"></i>
+      </div>
+      <div class="settings-container">
+        <div class="option-box p-2 text-center m-2 rounded-3">
+          <h4 class="m-0 fs-5">Colors</h4>
+          <ul class="colors-list list-unstyled text-center p-0 mt-2">
+            <li class="rounded-circle d-inline-block active" id="reset" data-color="#e91e63"></li>
+            <li class="rounded-circle d-inline-block" data-color="#ff9800"></li>
+            <li class="rounded-circle d-inline-block" data-color="#009688"></li>
+            <li class="rounded-circle d-inline-block" data-color="#03A9F4"></li>
+            <li class="rounded-circle d-inline-block" data-color="#4caf50"></li>
+          </ul>
+        </div>
+        <div class="option-box p-2 text-center m-2 rounded-3">
+          <h4 class="m-0 fs-5">Random BackGrounds</h4>
+          <div class="random-backgrounds">
+            <span class="yes text-white mt-2 d-inline-block fs-6 py-1 px-2 fw-bold rounded-3 active" data-background="yes">Yes</span>
+            <span class="no text-white mt-2 d-inline-block fs-6 py-1 px-2 fw-bold rounded-3" data-background="no">No</span>
+          </div>
+        </div>
+        <div class="option-box p-2 text-center m-2 rounded-3">
+          <h4 class="m-0 fs-5">Show Bullets</h4>
+          <div class="bullets-option">
+            <span class="yes text-white mt-2 d-inline-block fs-6 py-1 px-2 fw-bold rounded-3 active" data-display="show">Yes</span>
+            <span class="no text-white mt-2 d-inline-block fs-6 py-1 px-2 fw-bold rounded-3" data-display="hide">No</span>
+          </div>
+        </div>
+        <div class="option-box p-2 text-center m-2 rounded-3">
+          <h4 class="m-0 fs-5">Scroll Nav Bar</h4>
+          <div class="scroll-option">
+            <span class="yes text-white mt-2 d-inline-block fs-6 py-1 px-2 fw-bold rounded-3 active" data-scroll="scroll">Yes</span>
+            <span class="no text-white mt-2 d-inline-block fs-6 py-1 px-2 fw-bold rounded-3" data-scroll="noScroll">No</span>
+          </div>
+        </div>
+        <button class="reset-options text-white border-0 my-2 mx-auto d-block text-center fw-bold p-2 rounded-3">Reset Options</button>
+      </div>
+    </div>
+    <!-- End Setting Box -->
+
+    <!-- Start Nav Bullets -->
+    <!-- <ul class="nav-bullets">
+        <li><span class="bullet" data-section=".about-us" data-text="About"></span></li>
+        <li><span class="bullet" data-section=".skills" data-text="Skills"></span></li>
+        <li><span class="bullet" data-section=".gallery" data-text="Gallery"></span></li>
+        <li><span class="bullet" data-section=".timeline" data-text="Timeline"></span></li>
+        <li><span class="bullet" data-section=".features" data-text="Features"></span></li>
+        <li><span class="bullet" data-section=".testimonials" data-text="Testimonials"></span></li>
+      </ul> -->
+
+    <!-- <ul class="nav-bullets">
+        <li><a class="bullet" href="#about-us" data-section="About"></a></li>
+        <li><a class="bullet" href="#skills" data-section="Skills"></a></li>
+        <li><a class="bullet" href="#gallery" data-section="Gallery"></a></li>
+        <li><a class="bullet" href="#timeline" data-section="Timeline"></a></li>
+        <li><a class="bullet" href="#features" data-section="Features"></a></li>
+        <li><a class="bullet" href="#testimonials" data-section="Testimonials"></a></li>
+      </ul> -->
+
+    <!-- End Nav Bullets -->
+
+    <!-- Start Landing Page -->
+    <div class="landing-page position-relative">
+      <div class="overlay position-absolute w-100 h-100 start-0 top-0 "></div>
+      <header class="header-area w-100 m-auto p-2 text-white">
+        <div class="container d-flex justify-content-between align-items-center">
+          <div class="logo p-3">
+            <p class="m-0 fw-bold" id="logo-text" data-logo="Special Design">Special Design</p>
+          </div>
+          <div class="links-container w-100 d-flex justify-content-end align-items-center">
+            <ul class="links list-unstyled m-0 pe-3 fs-6">
+              <li class="ms-2">
+                <a class="text-decoration-none active" data-section=".about-us" href="#">About</a>
+              </li>
+              <li class="ms-2"><a class="text-decoration-none" data-section=".skills" href="#">Skills</a></li>
+              <li class="ms-2"><a class="text-decoration-none" data-section=".gallery" href="#">Gallery</a></li>
+              <li class="ms-2"><a class="text-decoration-none" data-section=".features" href="#">Features</a></li>
+              <li class="ms-2"><a class="text-decoration-none" data-section=".timeline" href="#">Timeline</a></li>
+              <li class="ms-2"><a class="text-decoration-none" data-section=".events" href="#">Events</a></li>
+              <li class="ms-2"><a class="text-decoration-none" data-section=".testimonials" href="#">Testimonials</a></li>
+            </ul>
+            <div class="proj-temp me-3 position-relative d-flex align-items-center justify-content-evenly py-1 px-2 fw-bold">
+              <span class="games">Projects</span>
+              <i class="fa fa-caret-down ms-2" aria-hidden="true"></i>
+              <ul class="m-0 p-0 position-absolute end-0 d-none list-unstyled">
+                <li><a class="d-block p-3 text-decoration-none text-dark border-bottom" href="leon/index.html">Leon</a></li>
+                <li><a class="d-block p-3 text-decoration-none text-dark border-bottom" href="kasper/index.html">Kasper</a></li>
+                <li><a class="d-block p-3 text-decoration-none text-dark border-bottom" href="abazza/index.html">Abazza</a></li>
+                <li><a class="d-block p-3 text-decoration-none text-dark border-bottom" href="Dash-Board/index.html">Dashboard</a></li>
+                <li><a class="d-block p-3 text-decoration-none text-dark border-bottom" href="project-Bootstrap5/index.html">Bondi</a></li>
+                <li><a class="d-block p-3 text-decoration-none text-dark border-bottom" href="Responsive Design/index.html">Responsive Design</a></li>
+                <li><a class="d-block p-3 text-decoration-none text-dark border-bottom" href="imageEditor/old-Image-Editor/index.html">Image Editor One</a></li>
+                <li><a class="d-block p-3 text-decoration-none text-dark border-bottom" href="imageEditor/new-Image-Editor/index.html">Image Editor Two</a></li>
+              </ul>
+            </div>
+            <div class="proj-game me-3 position-relative d-flex align-items-center justify-content-evenly py-1 px-2 fw-bold">
+              <span class="templates">Games</span>
+              <i class="fa fa-caret-down" aria-hidden="true"></i>
+              <ul class="m-0 p-0 position-absolute end-0 d-none list-unstyled">
+                <li><a class="d-block p-3 text-decoration-none text-dark border-bottom" href="typing-speed-Game/index.html">Typing Speed</a></li>
+                <li><a class="d-block p-3 text-decoration-none text-dark border-bottom" href="memory-Game/index.html">Memory Game</a></li>
+                <li><a class="d-block p-3 text-decoration-none text-dark border-bottom" href="hangman-Game/index.html">Hangman Game</a></li>
+              </ul>
+            </div>
+            <button class="toggle-menu d-inline-block border-0 position-relative">
+              <i class="fa-solid fa-bars text-white fs-3"></i>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div class="introduction-text position-absolute top-50 start-50 translate-middle text-center text-white w-75">
+        <div class="h-box m-auto">
+          <h1 class="m-0 mb-3 fs-1 mx-auto overflow-hidden">We Are <span>Creative</span> Agency</h1>
+        </div>
+        <p class="lh-lg fs-5 m-0">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex atque rem
+          iusto, voluptatum quas vero obcaecati, accusamus amet nesciunt
+          accusamus amet nesciunt
+        </p>
+      </div>
+
+      <!-- fa-2x= da 7agm al icon -->
+      <i class="fas fa-angle-left change-background d-none d-md-block position-absolute top-50 translate-middle-y i1 fa-2x"></i>
+      <i class="fas fa-angle-right change-background d-none d-md-block position-absolute top-50 translate-middle-y i2 fa-2x"></i>
+      <ul class="bullets-background position-absolute start-50 translate-middle-x d-flex">
+        <li class="border border-white rounded-circle ms-2 list-unstyled active" data-change="01.jpg"></li>
+        <li class="border border-white rounded-circle ms-2 list-unstyled" data-change="02.jpg"></li>
+        <li class="border border-white rounded-circle ms-2 list-unstyled" data-change="03.jpg"></li>
+        <li class="border border-white rounded-circle ms-2 list-unstyled" data-change="04.jpg"></li>
+        <li class="border border-white rounded-circle ms-2 list-unstyled" data-change="05.jpg"></li>
+      </ul>
+      <a href="#about-us" class="go-down position-absolute translate-middle-x">
+        <i class="fas fa-angle-double-down fa-2x"></i>
+      </a>
+    </div>
+    <!-- End Landing Page -->
+
+    <!-- Start About Us -->
+    <div class="container">
+      <div class="about-us pt-5 pb-5 row text-center text-md-start" id="about-us">
+        <div class="col-md-6">
+          <div class="info-box p-0 p-md-4 ">
+            <h2 class="fw-bold fs-2 mb-2">About Us</h2>
+            <p class="lh-lg m-0 text-black-50">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+              dolor eaque, cum porro deleniti debitis eos, quo id at sint
+              assumenda voluptatum nobis molestiae officiis exercitationem sequi,
+              quidem sunt voluptatem.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="image-box text-center">
+            <img src="imgs/about-us.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End About Us -->
+
+    <!-- Start Our Skills -->
+    <div class="skills pt-5 pb-5" id="skills">
+      <div class="container pt-5 pb-5">
+        <h2 class="main-tittle fs-2 fw-bold text-center">Our Skills</h2>
+        <div class="skill-box d-block d-md-flex bg-white p-3 mb-3">
+          <div class="skill-name w-100 fw-bold mb-3 mb-md-0 text-center lh-lg">HTML</div>
+          <div class="skill-progress w-100 bg-light position-relative overflow-hidden">
+            <span class="position-absolute top-0 start-0 h-100" data-progress="80%"></span>
+          </div>
+        </div>
+        <div class="skill-box d-block d-md-flex bg-white p-3 mb-3">
+          <div class="skill-name w-100 fw-bold mb-3 mb-md-0 text-center lh-lg">CSS</div>
+          <div class="skill-progress w-100 bg-light position-relative overflow-hidden">
+            <span class="position-absolute top-0 start-0 h-100" data-progress="70%"></span>
+          </div>
+        </div>
+        <div class="skill-box d-block d-md-flex bg-white p-3 mb-3">
+          <div class="skill-name w-100 fw-bold mb-3 mb-md-0 text-center lh-lg">JavaScript</div>
+          <div class="skill-progress w-100 bg-light position-relative overflow-hidden">
+            <span class="position-absolute top-0 start-0 h-100" data-progress="90%"></span>
+          </div>
+        </div>
+        <div class="skill-box d-block d-md-flex bg-white p-3 mb-3">
+          <div class="skill-name w-100 fw-bold mb-3 mb-md-0 text-center lh-lg">Python</div>
+          <div class="skill-progress w-100 bg-light position-relative overflow-hidden">
+            <span class="position-absolute top-0 start-0 h-100" data-progress="80%"></span>
+          </div>
+        </div>
+        <div class="skill-box d-block d-md-flex bg-white p-3 mb-3">
+          <div class="skill-name w-100 fw-bold mb-3 mb-md-0 text-center lh-lg">PHP</div>
+          <div class="skill-progress w-100 bg-light position-relative overflow-hidden">
+            <span class="position-absolute top-0 start-0 h-100" data-progress="90%"></span>
+          </div>
+        </div>
+        <div class="skill-box d-block d-md-flex bg-white p-3 mb-3">
+          <div class="skill-name w-100 fw-bold mb-3 mb-md-0 text-center lh-lg">MySQL</div>
+          <div class="skill-progress w-100 bg-light position-relative overflow-hidden">
+            <span class="position-absolute top-0 start-0 h-100" data-progress="65%"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Our Skills -->
+
+    <!-- Start Gallery -->
+    <div class="gallery pt-5 pb-5 bg-white text-center" id="gallery">
+      <div class="container pt-5 pb-5">
+        <h2 class="main-tittle fs-2 fw-bold text-center">Our Gallery</h2>
+        <div class="row">
+          <div class="images-box text-center">
+            <img class="p-1 bg-light border-secondary border m-1" src="imgs/01.jpg" alt="Image One" />
+            <img class="p-1 bg-light border-secondary border m-1" src="imgs/02.jpg" alt="Image Two" />
+            <img class="p-1 bg-light border-secondary border m-1" src="imgs/03.jpg" alt="Image Three" />
+            <img class="p-1 bg-light border-secondary border m-1" src="imgs/04.jpg" alt="Image Four" />
+            <img class="p-1 bg-light border-secondary border m-1" src="imgs/05.jpg" alt="Image Five" />
+            <img class="p-1 bg-light border-secondary border m-1" src="imgs/06.png" alt="" />
+            <img class="p-1 bg-light border-secondary border m-1" src="imgs/07.jpg" alt="" />
+            <img class="p-1 bg-light border-secondary border m-1" src="imgs/08.jpg" alt="" />
+            <img class="p-1 bg-light border-secondary border m-1" src="imgs/09.jpg" alt="" />
+            <img class="p-1 bg-light border-secondary border m-1" src="imgs/10.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Gallery -->
+
+    <!-- Start Editor Img  -->
+    <div class="editor-img d-flex align-items-center justify-content-center d-none" id="editor-img">
+      <div class="container-img disable p-4 px-md-4 pt-md-5 pb-md-5 bg-white rounded-3 ">
+      <h2 class="fs-4 fw-bold ">Easy Image Editor</h2>
+      <div class="wrapper d-flex mx-0 my-4 flex-wrap-reverse flex-md-nowrap">
+        <div class="editor-panel py-3 px-4 border border-1 rounded-3">
+          <div class="filter">
+            <label class="title d-block fs-3 mb-2">Filters</label>
+            <div class="options">
+              <button id="brightness" class="active text-black-50 mb-2 rounded-1 border border-secondary">Brightness</button>
+              <button id="saturation" class="text-black-50 mb-2 rounded-1 border border-secondary">Saturation</button>
+              <button id="inversion" class="text-black-50 mb-2 rounded-1 border border-secondary">Inversion</button>
+              <button id="grayscale" class="text-black-50 mb-2 rounded-1 border border-secondary">Grayscale</button>
+            </div>
+            <div class="slider mt-2">
+              <div class="filter-info text-black-50 d-flex fs-6 justify-content-between">
+                <p class="name">Brightness</p>
+                <p class="value">100%</p>
+              </div>
+              <input class="w-100" type="range" value="100" min="0" max="200" />
+            </div>
+          </div>
+          <div class="rotate mt-3">
+            <label class="title">Rotate & Flip</label>
+            <div class="options d-flex flex-wrap justify-content-between">
+              <button class="text-black-50 mb-2 rounded-1 border border-secondary" id="left mb-4 mb-md-5"><i class="fa-solid fa-rotate-left"></i></button>
+              <button class="text-black-50 mb-2 rounded-1 border border-secondary" id="right ms-auto mb-4 mb-md-5"><i class="fa-solid fa-rotate-right"></i></button>
+              <button class="text-black-50 mb-2 rounded-1 border border-secondary fs-6" id="vertical"><i class="bx bx-reflect-vertical"></i></button>
+              <button class="text-black-50 mb-2 rounded-1 border border-secondary fs-6" id="horizontal"><i class="bx bx-reflect-horizontal"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="preview-img d-flex flex-grow-1 align-items-center justify-content-center overflow-hidden ms-3 rounded-3 ">
+          <img class="w-100 h-100" src="images/placeholder.png" alt="preview-img" />
+        </div>
+      </div>
+      <div class="controls d-flex flex-wrap justify-content-between">
+        <button class="reset-filter bg-white text-black-50 border border-secondary fs-6 py-3 px-4 rounded-1 text-uppercase">Reset Filters</button>
+        <div class="rows">
+          <input type="file" class="file-input" accept="image/*" hidden>
+          <button class="choose-img bg-secondary border border-secondary fs-6 py-3 px-4 rounded-1 text-uppercase ">Choose Image</button>
+          <button class="save-img m-0 ms-md-1 bg-primary border border-primary fs-6 py-3 px-4 rounded-1 text-uppercase ">Save Image</button>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- End Editor Img  -->
+
+    <!-- Start Features -->
+    <div class="features pt-5 pb-5" id="features">
+      <div class="container pt-5 pb-5">
+        <h2 class="main-tittle fs-2 text-center fw-bold">Our Features</h2>
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+            <div class="feat-box d-flex justify-content-center align-items-center flex-wrap text-center mb-5">
+              <img src="imgs/Icon_01.png" alt="" />
+              <h4 class="w-100 fs-4 mt-3 mb-5 mx-0 position-relative">Development</h4>
+              <p class="text-black-50 lh-base w-75 m-0">
+                We are professional marketeers, we will do anything you imagine in
+                no time.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="feat-box d-flex justify-content-center align-items-center flex-wrap text-center mb-5">
+              <img src="imgs/Icon_02.png" alt="" />
+              <h4 class="w-100 fs-4 mt-3 mb-5 mx-0 position-relative">Marketing</h4>
+              <p class="text-black-50 lh-base w-75 m-0">
+                We are professional marketeers, we will do anything you imagine in
+                no time.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="feat-box d-flex justify-content-center align-items-center flex-wrap text-center mb-5">
+              <img src="imgs/Icon_03.png" alt="" />
+              <h4 class="w-100 fs-4 mt-3 mb-5 mx-0 position-relative">Hosting</h4>
+              <p class="text-black-50 lh-base w-75 m-0">
+                We are professional marketeers, we will do anything you imagine in
+                no time.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="feat-box d-flex justify-content-center align-items-center flex-wrap text-center mb-5">
+              <img src="imgs/Icon_04.png" alt="" />
+              <h4 class="w-100 fs-4 mt-3 mb-5 mx-0 position-relative">Mobile Develope</h4>
+              <p class="text-black-50 lh-base w-75 m-0">
+                We are professional marketeers, we will do anything you imagine in
+                no time.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="feat-box d-flex justify-content-center align-items-center flex-wrap text-center mb-5">
+              <img src="imgs/Icon_05.png" alt="" />
+              <h4 class="w-100 fs-4 mt-3 mb-5 mx-0 position-relative">Cloud and Servers</h4>
+              <p class="text-black-50 lh-base w-75 m-0">
+                We are professional marketeers, we will do anything you imagine in
+                no time.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="feat-box d-flex justify-content-center align-items-center flex-wrap text-center mb-5">
+              <img src="imgs/Icon_06.png" alt="" />
+              <h4 class="w-100 fs-4 mt-3 mb-5 mx-0 position-relative">Seo</h4>
+              <p class="text-black-50 lh-base w-75 m-0">
+                We are professional marketeers, we will do anything you imagine in
+                no time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Features -->
+
+    <!-- Start TimeLine -->
+    <div class="timeline pt-5 pb-5" id="timeline">
+      <div class="container">
+        <div class="timeline-content position-relative overflow-hidden d-flex flex-column m-0 m-md-3">
+          <div class="year my-4 mx-auto position-relative rounded-2 text-center text-white py-1 px-2 fw-bold">2023</div>
+
+          <div class="left mb-4 mb-md-5">
+            <div class="content text-center overflow-hidden p-3 bg-white">
+              <h3 class="fw-bold mb-2">Testing Heading</h3>
+              <p class="text-black-50 m-0 lh-base">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                dignissimos ipsum sunt vitae labore placeat veniam quia
+                adipisci, distinctio, vero voluptatum alias corrupti nobis
+                error. Voluptates officiis deleniti exercitationem ipsum.
+              </p>
+            </div>
+          </div>
+
+          <div class="right ms-auto mb-4 mb-md-5">
+            <div class="content text-center overflow-hidden p-3 bg-white">
+              <h3 class="fw-bold mb-2">Testing Heading</h3>
+              <p class="text-black-50 m-0 lh-base">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                dignissimos ipsum sunt vitae labore placeat veniam quia
+                adipisci, distinctio, vero voluptatum alias corrupti nobis
+                error. Voluptates officiis deleniti exercitationem ipsum.
+              </p>
+            </div>
+          </div>
+
+          <div class="year my-4 mx-auto position-relative rounded-2 text-center text-white py-1 px-2 fw-bold">2021</div>
+
+          <div class="left mb-4 mb-md-5">
+            <div class="content text-center overflow-hidden p-3 bg-white">
+              <h3 class="fw-bold mb-2">Testing Heading</h3>
+              <p class="text-black-50 m-0 lh-base">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                dignissimos ipsum sunt vitae labore placeat veniam quia
+                adipisci, distinctio, vero voluptatum alias corrupti nobis
+                error. Voluptates officiis deleniti exercitationem ipsum.
+              </p>
+            </div>
+          </div>
+
+          <div class="left mb-4 mb-md-5">
+            <div class="content text-center overflow-hidden p-3 bg-white">
+              <h3 class="fw-bold mb-2">Testing Heading</h3>
+              <p class="text-black-50 m-0 lh-base">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                dignissimos ipsum sunt vitae labore placeat veniam quia
+                adipisci, distinctio, vero voluptatum alias corrupti nobis
+                error. Voluptates officiis deleniti exercitationem ipsum.
+              </p>
+            </div>
+          </div>
+
+          <div class="right ms-auto mb-4 mb-md-5">
+            <div class="content text-center overflow-hidden p-3 bg-white">
+              <h3 class="fw-bold mb-2">Testing Heading</h3>
+              <p class="text-black-50 m-0 lh-base">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                dignissimos ipsum sunt vitae labore placeat veniam quia
+                adipisci, distinctio, vero voluptatum alias corrupti nobis
+                error. Voluptates officiis deleniti exercitationem ipsum.
+              </p>
+            </div>
+          </div>
+
+          <div class="left mb-4 mb-md-5">
+            <div class="content text-center overflow-hidden p-3 bg-white">
+              <h3 class="fw-bold mb-2">Testing Heading</h3>
+              <p class="text-black-50 m-0 lh-base">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                dignissimos ipsum sunt vitae labore placeat veniam quia
+                adipisci, distinctio, vero voluptatum alias corrupti nobis
+                error. Voluptates officiis deleniti exercitationem ipsum.
+              </p>
+            </div>
+          </div>
+
+          <div class="year my-4 mx-auto position-relative rounded-2 text-center text-white py-1 px-2 fw-bold">2017</div>
+
+          <div class="right ms-auto mb-4 mb-md-5">
+            <div class="content text-center overflow-hidden p-3 bg-white">
+              <h3 class="fw-bold mb-2">Testing Heading</h3>
+              <p class="text-black-50 m-0 lh-base">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                dignissimos ipsum sunt vitae labore placeat veniam quia
+                adipisci, distinctio, vero voluptatum alias corrupti nobis
+                error. Voluptates officiis deleniti exercitationem ipsum.
+              </p>
+            </div>
+          </div>
+
+          <div class="left mb-4 mb-md-5">
+            <div class="content text-center overflow-hidden p-3 bg-white">
+              <h3 class="fw-bold mb-2">Testing Heading</h3>
+              <p class="text-black-50 m-0 lh-base">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                dignissimos ipsum sunt vitae labore placeat veniam quia
+                adipisci, distinctio, vero voluptatum alias corrupti nobis
+                error. Voluptates officiis deleniti exercitationem ipsum.
+              </p>
+            </div>
+          </div>
+
+          <div class="left mb-4 mb-md-5">
+            <div class="content text-center overflow-hidden p-3 bg-white">
+              <h3 class="fw-bold mb-2">Testing Heading</h3>
+              <p class="text-black-50 m-0 lh-base">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                dignissimos ipsum sunt vitae labore placeat veniam quia
+                adipisci, distinctio, vero voluptatum alias corrupti nobis
+                error. Voluptates officiis deleniti exercitationem ipsum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End TimeLine -->
+
+    <!-- Star Events -->
+    <div class="events position-relative pt-5 pb-5" id="events">
+      <div class="container pt-5 pb-5">
+        <h2 class="main-tittle fs-2 text-center fw-bold">Latest Events</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <img class="d-none d-lg-block" src="imgs/events.png" alt="" />
+          </div>
+          <div class="col-lg-6">
+            <div class="info">
+              <div class="time d-flex justify-content-center align-items-center my-3 mx-auto gap-2">
+                <div class="unit rounded-3 text-center">
+                  <span class="num d-block fs-1 pt-3 pb-3 fw-bold">00</span>
+                  <span class="d-block">Days</span>
+                </div>
+                <div class="unit rounded-3 text-center">
+                  <span class="num d-block fs-1 pt-3 pb-3 fw-bold">00</span>
+                  <span class="d-block">Hours</span>
+                </div>
+                <div class="unit rounded-3 text-center">
+                  <span class="num d-block fs-1 pt-3 pb-3 fw-bold">00</span>
+                  <span class="d-block">Minutes</span>
+                </div>
+                <div class="unit rounded-3 text-center">
+                  <span class="num d-block fs-1 pt-3 pb-3 fw-bold">00</span>
+                  <span class="d-block">Seconds</span>
+                </div>
+              </div>
+              <h2 class="tittle text-center mt-5 fs-3 fw-bold">Tech Masters Event 2023</h2>
+              <p class="description lh-lg text-center fs-6 text-black-50 mt-3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et vero
+                tenetur doloremque iusto ut adipisci quam ratione aliquam excepturi
+                nulla in harum, veritatis porro
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="subscribe-btn w-100 mt-5">
+          <form class="my-3 mx-auto p-3 py-md-4 px-md-5 d-flex flex-column flex-md-row gap-3" action="">
+            <input class="p-4 border-0 p-3 flex-grow-1" type="email" placeholder="Enter Your Email" />
+            <input class="text-white p-4 border-0 fw-bold" type="submit" value="subscribe" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- End Events -->
+
+    <!-- 2ara2 al nas clients y3any -->
+    <!-- Start Testimonials -->
+    <div class="testimonials pt-5 pb-5 position-relative" id="testimonials">
+      <div class="container pt-5 pb-5">
+        <h2 class="fw-bold fs-2 text-white mb-4 position-relative w-100 text-center text-md-start">Testimonials</h2>
+          <div class="row ts-content">
+            <div class="col-md-4 mb-2 mb-md-0 d-flex">
+              <div class="ts-box position-relative bg-white p-4 text-center text-lg-start ">
+              <p class="mb-4 lh-base fs-5 fst-italic">
+                Iam very happy with the product its amazing and i recieve it very
+                fast and the price was amazing.
+              </p>
+              <div class="person-info overflow-hidden">
+                <div class="row justify-content-between align-items-center">
+                  <div class="col-lg-4">
+                    <img class="rounded-circle me-0 me-lg-2" src="https://placehold.it/80/DDD" alt="" />
+                  </div>
+                  <div class="col-lg-7">
+                    <div>
+                      <h4 class="mt-3 mb-2">Osama Salama</h4>
+                      <p class="m-0">CEO At Company</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="col-md-4 mb-2 mb-md-0">
+              <div class="ts-box position-relative bg-white p-4 text-center text-lg-start ">
+              <p class="mb-4 lh-base fs-5 fst-italic">
+                Iam very happy with the product its amazing and i recieve it very
+                fast and the price was amazing.
+              </p>
+              <div class="person-info">
+                <div class="row justify-content-between align-items-center">
+                  <div class="col-lg-4">
+                    <!-- da img gbnah on the fly -->
+                    <img class="rounded-circle me-0 me-lg-2" src="https://placehold.it/80/DDD" alt="" />
+                  </div>
+                  <div class="col-lg-7">
+                    <div>
+                      <h4 class="mt-3 mb-2">Ahmed Abo Shosha</h4>
+                      <p class="m-0">CEO At Company</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="col-md-4 mb-2 mb-md-0">
+              <div class="ts-box position-relative bg-white p-4 text-center text-lg-start ">
+              <p class="mb-4 lh-base fs-5 fst-italic">
+                Iam very happy with the product its amazing and i recieve it very
+                fast and the price was amazing.
+              </p>
+              <div class="person-info">
+                <div class="row justify-content-between align-items-center">
+                  <div class="col-lg-4">
+                    <img class="rounded-circle me-0 me-lg-2" src="https://placehold.it/80/DDD" alt="" />
+                  </div>
+                  <div class="col-lg-7">
+                    <div>
+                      <h4 class="mt-3 mb-2">Mohamed Galal</h4>
+                      <p class="m-0">CEO At Company</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <!-- End Testimonials -->
+
+    <!-- Start Contact Us -->
+    <div class="contact pt-5 pb-5 position-relative">
+      <div class="overlay position-absolute top-0 start-0 w-100 h-100"></div>
+      <div class="container pt-5 pb-5 position-relative">
+        <h2 class="fs-1 fw-bold mb-5 text-center">Contact Us</h2>
+        <form action="" class="row m-lg-auto">
+            <div class="col-md-6">
+                <input class="py-2 px-3 mb-2 w-100 border rounded-3" type="text" placeholder="Your Name" name="username" />
+                <input class="py-2 px-3 mb-2 w-100 border rounded-3" type="text" placeholder="Your Phone" name="phone" />
+                <input class="py-2 px-3 mb-2 w-100 border rounded-3" type="email" placeholder="Your Email" name="email" />
+                <input class="py-2 px-3 mb-2 w-100 border rounded-3" type="text" placeholder="Subject" name="subject" />
+            </div>
+            <div class="col-md-6 mt-3 mt-md-0">
+                <textarea class="py-2 px-3 mb-2 w-100 border rounded-3" name="message" placeholder="Your Message"></textarea>
+                <input class="w-100 text-white rounded-3" type="submit" value="Send" />
+            </div>
+          
+          
+        </form>
+      </div>
+    </div>
+    <!-- End Contact Us -->
+
+    <!-- Start Subscribe -->
+    <!-- <div class="subscribe pt-5 pb-5 text-center text-md-start">
+      <div class="container">
+        <form class="row align-items-center">
+          <div class="col-md-6 col-lg-3">
+            <span class="fw-bold fs-5 mb-3">Subscribe to our Newsletter:</span>
+          </div>
+          <div class="col-md-6 col-lg-7 mb-5 mb-md-0">
+            <input
+              class="w-100 text-light bg-transparent p-2 data-input border-0 border-bottom"
+              type="text"
+              placeholder="Enter Email Address"
+            />
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <input class="btn rounded-pill" type="submit" value="Subscribe" />
+          </div>
+        </form>
+      </div>
+    </div> -->
+    <!-- End Subscribe -->
+
+    <!-- Start Footer -->
+    <footer class="pt-5 pb-5 text-white-50 text-center text-md-start">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+            <!-- <img src="images/logo.png" alt="" /> -->
+            <h1 class="mt-0">Special Design</h1>
+            <p class="mt-4 mb-5">
+              Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,
+              lacinia eget consectetur sed, convallis at tellus.
+            </p>
+            <p class="mb-0">
+              Created By <span class="graphberry">Graphberry</span>
+            </p>
+            <p>
+              <i class="fa-regular fa-copyright"></i> 2023 -
+              <span class="inc">Abazza</span>
+            </p>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-3 mb-lg-0">
+            <h5 class="text-white">Links</h5>
+            <ul class="list-unstyled lh-lg">
+              <li>About</li>
+              <li>Skills</li>
+              <li>Gallery</li>
+              <li>Features</li>
+              <li>Timeline</li>
+              <li>Events</li>
+              <li>Testimonials</li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-3 mb-lg-0">
+            <h5 class="text-white">About Us</h5>
+            <ul class="list-unstyled lh-lg">
+              <li>Sign In</li>
+              <li>Register</li>
+              <li>About Us</li>
+              <li>Blog</li>
+              <li>Contact Us</li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="d-flex align-items-center justify-content-center">
+              <a class="btn main-btn rounded-pill w-100 text-white py-2 px-3 mb-3 position-relative overflow-hidden" data-anchor="abazza@gmail.com" href="#">
+                <span class="d-block">abazza@gmail.com</span>
+              </a>
+            </div>
+            <div class="social-container d-flex justify-content-center align-items-center mt-5 mb-5">
+              <div class="social-menu position-relative d-flex">
+                <div class="social-icon">
+                  <a class="d-inline-block bg-white rounded-circle text-center my-0 mx-2" href="#"><i class="fa-brands fa-twitter fs-5 text-dark lh-lg"></i>
+                    <span class="position-absolute start-50 top-50 fs-5">Twitter</span>
+                  </a>
+                </div>
+                <div class="social-icon">
+                  <a class="d-inline-block bg-white rounded-circle text-center my-0 mx-2" href="#"><i class="fa-brands fa-facebook fs-5 text-dark lh-lg"></i>
+                    <span class="position-absolute start-50 top-50 fs-5">Facebook</span>
+                  </a>
+                </div>
+                <div class="social-icon">
+                  <a class="d-inline-block bg-white rounded-circle text-center my-0 mx-2" href="#"><i class="fa-brands fa-instagram fs-5 text-dark lh-lg"></i>
+                    <span class="position-absolute start-50 top-50 fs-5">Instagram</span>
+                  </a>
+                </div>
+                <div class="social-icon">
+                  <a class="d-inline-block bg-white rounded-circle text-center my-0 mx-2" href="#"><i class="fa-brands fa-github fs-5 text-dark lh-lg"></i>
+                    <span class="position-absolute start-50 top-50 fs-5 text-white">Github</span>
+                  </a>
+                </div>
+                <div class="social-icon">
+                  <a class="d-inline-block bg-white rounded-circle text-center my-0 mx-2" href="#"><i class="fa-brands fa-youtube fs-5 text-dark lh-lg"></i>
+                    <span class="position-absolute start-50 top-50 fs-5">Youtube</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+    <div id="countdown"></div>
+
+    <!-- <script src="js/bootstrap.bundle.min.js"></script> -->
+    <!-- <script src="js/all.min.js"></script> -->
+    <script src="js/master.js" type="module"></script>
+    <script src="js/editor.js" type="module"></script>
+    <!-- scroll Nav Yes no -->
+    <!-- head room -->
+  </body>
+</html>

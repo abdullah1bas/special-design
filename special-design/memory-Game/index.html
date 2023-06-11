@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="memory-game.css" />
+  </head>
+  <body>
+    <div class="control-buttons">
+      <span>Start Game</span>
+    </div>
+    <div class="container">
+      <div class="info-container">
+        <div class="name">Hello: <span></span></div>
+        <div class="time-end"><span>02:00</span></div>
+        <div class="tries">Wrong Tries: <span>0</span></div>
+      </div>
+      <div class="memory-game-blocks">
+        <div class="game-block" data-technology="codeblocks">
+          <div class="face front"></div>
+          <div class="face back">
+            <img decoding="async" src="images2/codeblocks.png" alt="" />
+          </div>
+        </div>
+        <div class="game-block" data-technology="codeblocks">
+          <div class="face front"></div>
+          <div class="face back">
+            <img decoding="async" src="images2/codeblocks.png" alt="" />
+          </div>
+        </div>
+        <div class="game-block" data-technology="eclipse">
+          <div class="face front"></div>
+          <div class="face back">
+            <img decoding="async" src="images2/eclipse.png" alt="" />
+          </div>
+        </div>
+        <div class="game-block" data-technology="eclipse">
+          <div class="face front"></div>
+          <div class="face back">
+            <img decoding="async" src="images2/eclipse.png" alt="" />
+          </div>
+        </div>
+        <div class="game-block" data-technology="geany">
+          <div class="face front"></div>
+          <div class="face back">
+            <img decoding="async" src="images2/geany.png" alt="" />
+          </div>
+        </div>
+        <div class="game-block" data-technology="geany">
+          <div class="face front"></div>
+          <div class="face back">
+            <img decoding="async" src="images2/geany.png" alt="" />
+          </div>
+        </div>
+        <div class="game-block" data-technology="gitea">
+          <div class="face front"></div>
+          <div class="face back">
+            <img decoding="async" src="images2/gitea.png" alt="" />
+          </div>
+        </div>
+        <div class="game-block" data-technology="gitea">
+          <div class="face front"></div>
+          <div class="face back">
+            <img decoding="async" src="images2/gitea.png" alt="" />
+          </div>
+        </div>
+        <div class="game-block" data-technology="gogs">
+          <div class="face front"></div>
+          <div class="face back">
+            <img decoding="async" src="images2/gogs.png" alt="" />
+          </div>
+        </div>
+        <div class="game-block" data-technology="gogs">
+          <div class="face front"></div>
+          <div class="face back">
+            <img decoding="async" src="images2/gogs.png" alt="" />
+          </div>
+        </div>
+        <div class="game-block" data-technology="visualstudio-pro">
+          <div class="face front"></div>
+          <div class="face back">
+            <img decoding="async" src="images2/visualstudio-pro.png" alt="" />
+          </div>
+        </div>
+        <div class="game-block" data-technology="visualstudio-pro">
+          <div class="face front"></div>
+          <div class="face back">
+            <img decoding="async" src="images2/visualstudio-pro.png" alt="" />
+          </div>
+        </div>
+        <div class="game-block" data-technology="lazarus">
+          <div class="face front"></div>
+          <div class="face back">
+            <img decoding="async" src="images2/lazarus.png" alt="" />
+          </div>
+        </div>
+        <div class="game-block" data-technology="lazarus">
+          <div class="face front"></div>
+          <div class="face back">
+            <img decoding="async" src="images2/lazarus.png" alt="" />
+          </div>
+        </div>
+        <div class="game-block" data-technology="netbeans">
+          <div class="face front"></div>
+          <div class="face back">
+            <img decoding="async" src="images2/netbeans.png" alt="" />
+          </div>
+        </div>
+        <div class="game-block" data-technology="netbeans">
+          <div class="face front"></div>
+          <div class="face back">
+            <img decoding="async" src="images2/netbeans.png" alt="" />
+          </div>
+        </div>
+        <div class="game-block" data-technology="notepad">
+          <div class="face front"></div>
+          <div class="face back">
+            <img decoding="async" src="images2/notepad.png" alt="" />
+          </div>
+        </div>
+        <div class="game-block" data-technology="notepad">
+          <div class="face front"></div>
+          <div class="face back">
+            <img decoding="async" src="images2/notepad.png" alt="" />
+          </div>
+        </div>
+        <div class="game-block" data-technology="visualstudio-code">
+          <div class="face front"></div>
+          <div class="face back">
+            <img decoding="async" src="images2/visualstudio-code.png" alt="" />
+          </div>
+        </div>
+        <div class="game-block" data-technology="visualstudio-code">
+          <div class="face front"></div>
+          <div class="face back">
+            <img decoding="async" src="images2/visualstudio-code.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="rank"></div>
+    </div>
+
+    <audio id="success" src="audio/success.mp3" preload="auto"></audio>
+    <audio id="fail" src="audio/fail.mp3" preload="auto"></audio>
+    <audio id="end" src="audio/end-game.mp3" preload="auto"></audio>
+    <audio
+      id="background-audio"
+      src="audio/background_audio.mp3"
+      preload="auto"
+    ></audio>
+    <script src="memory-game.js"></script>
+    <!-- <div class="toza">
+      <div class="toza1">انا</div>
+      <div class="toza2">هو</div>
+    </div> -->
+  </body>
+</html>

@@ -1,0 +1,430 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+:root {
+  --main-color: #00f7ff;
+  /* --second-color: #01fb00; */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.alert-login {
+  z-index: 20;
+  background-color: #ffffffd1;
+  backdrop-filter: blur(5px);
+}
+.message-login {
+  width: 600px;
+  z-index: 21;
+}
+@media (max-width: 767px) {
+  .message-login h4 {
+    font-size: 20px;
+    color: white;
+  }
+  .message-login h5 {
+    font-size: 16px;
+    color: white;
+  }
+}
+@media (max-width: 500px) {
+  .message-login h4 {
+    font-size: 14px;
+    color: white;
+  }
+  .message-login h5 {
+    font-size: 12px;
+    color: white;
+  }
+}
+.alert-btn {
+  width: 100px;
+  background-color: #01fb00;
+}
+.alert-btn:hover {
+  background-color: #00f7ff;
+}
+.login {
+  min-height: 100vh;
+}
+.login-light {
+  top: 0;
+  width: 500px;
+  height: 20px;
+  background: #00f7ff;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.login-light2 {
+  top: 25px;
+  width: 500px;
+  height: 20px;
+  background: #01fb00;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.login .login-shadow {
+  position: absolute;
+  top: -105%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 950px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.3) -50%,
+    rgba(255, 255, 255, 0) 90%
+  );
+  clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+  pointer-events: none;
+  transition: 0.5s ease;
+  z-index: 10;
+}
+
+.login-box {
+  width: 400px;
+  height: 500px;
+  background: #191919;
+  border-radius: 20px;
+}
+
+.toggle {
+  position: absolute;
+  top: 20px;
+  right: -70px;
+  width: 60px;
+  height: 120px;
+  background: #191919;
+  border-radius: 10px;
+}
+@media (max-width: 767px) {
+  .login-box {
+    height: 600px;
+  }
+  .toggle {
+    position: absolute;
+    right: 0;
+    left: 50px;
+    top: 480px;
+    transform: rotate(-90deg);
+  }
+}
+
+.toggle:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 80%;
+  background: #000;
+}
+.toggle.Blue:before {
+  background-color: #00f7ff;
+}
+.toggle.Green:before {
+  background-color: #01fb00;
+}
+.toggle:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45px;
+  height: 45px;
+  background: #333;
+  border: 2px solid #191919;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s ease;
+}
+.input-check:checked ~ .toggle:after {
+  top: 65px;
+}
+.input-check {
+  right: -70px;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  display: none;
+}
+.toggle .text {
+  top: 17px;
+  z-index: 1;
+  pointer-events: none;
+  transition: 0.5s ease;
+}
+/* .toggle .text.off {
+  opacity: 1;
+} */
+@media (max-width: 767px) {
+  .toggle .text {
+    writing-mode: vertical-lr;
+    top: 13px;
+  }
+  .toggle .text.off {
+    top: 13px;
+  }
+}
+/* .input-check:checked ~ .toggle .text.off {
+  top: 76px;
+  opacity: 0;
+} */
+.toggle .text.on {
+  opacity: 0;
+}
+/* .input-check:checked ~ .toggle .text.on {
+  top: 76px;
+  opacity: 1;
+  color: var(--main-color) !important;
+  text-shadow: 0 0 15px var(--main-color), 0 0 30px var(--main-color),
+    0 0 45px var(--main-color), 0 0 60px var(--main-color);
+} */
+h2 {
+  transition: 0.5s ease;
+}
+
+.input-check:checked ~ h2 {
+  color: var(--main-color) !important;
+  text-shadow: 0 0 15px var(--main-color), 0 0 30px var(--main-color);
+}
+.input-box {
+  width: 310px;
+  margin-top: 30px;
+}
+.input-box .icon {
+  right: 8px;
+  line-height: 57px;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+.input-check:checked ~ .input-box .icon {
+  color: var(--main-color) !important;
+  filter: drop-shadow(0 0 5px var(--main-color));
+}
+.input-box label {
+  left: 5px;
+  pointer-events: none;
+  transition: 0.5s ease;
+}
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -10px !important;
+}
+.input-check:checked ~ .input-box label {
+  color: var(--main-color) !important;
+  text-shadow: 0 0 10px var(--main-color);
+}
+
+
+.input-box input {
+  height: 50px;
+  outline: none;
+  transition: 0.5s ease;
+}
+.input-check:checked ~ .input-box input {
+  color: var(--main-color) !important;
+  text-shadow: 0 0 5px var(--main-color);
+}
+
+.input-box .input-line {
+  bottom: -3px;
+  height: 3px;
+  transition: 0.5s ease;
+}
+.input-check:checked ~ .input-box .input-line {
+  background: var(--main-color) !important;
+  box-shadow: 0 0 10px var(--main-color) !important;
+}
+.input-box .prog {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 106%;
+  width: 0px;
+  background-color: var(--main-color);
+}
+.requirement-password,
+.requirement-email {
+  height: 30px;
+}
+.requirement-password li,
+.requirement-email li {
+  display: none;
+}
+.requirement-password li.valid,
+.requirement-email li.valid {
+  display: flex !important;
+}
+.requirement-password li i,
+.requirement-email li i {
+  font-size: 0.6rem;
+  color: #aaa;
+  width: 20px;
+}
+.requirement-password li.valid i,
+.requirement-email li.valid i {
+  font-size: 12px;
+  color: #4285f4;
+}
+.input-check:checked ~ .requirement-email li.valid.enter i {
+  color: var(--main-color) !important;
+  text-shadow: 0 0 5px var(--main-color);
+}
+.input-check:checked ~ .requirement-password li.valid.enter i {
+  color: var(--main-color) !important;
+  text-shadow: 0 0 5px var(--main-color);
+}
+.requirement-password li.valid span,
+.requirement-email li.valid span {
+  font-size: 12px;
+  color: white;
+  display: flex;
+}
+.input-check:checked ~ .requirement-email li.valid.enter span {
+  color: var(--main-color) !important;
+  text-shadow: 0 0 5px var(--main-color);
+}
+.input-check:checked ~ .requirement-password li.valid.enter span {
+  color: var(--main-color) !important;
+  text-shadow: 0 0 5px var(--main-color);
+}
+.remember-forgot {
+  margin: -10px 0 15px;
+  transition: 0.5s ease;
+}
+.input-check:checked ~ .remember-forgot {
+  color: var(--main-color) !important;
+  text-shadow: 0 0 10px var(--main-color);
+}
+.remember-forgot label input {
+  accent-color: #fff;
+  transition: 0.5s ease;
+}
+.input-check:checked ~ .remember-forgot label input {
+  accent-color: var(--main-color) !important;
+}
+.remember-forgot a {
+  transition: color 0.5s ease;
+}
+.remember-forgot a:hover {
+  text-decoration: underline !important;
+}
+.input-check:checked ~ .remember-forgot a {
+  color: var(--main-color) !important;
+}
+.input-check:checked ~ .button-login {
+  background: var(--main-color) !important;
+  box-shadow: 0 0 15px var(--main-color), 0 0 15px var(--main-color);
+}
+.register-link {
+  transition: 0.5s ease;
+}
+.input-check:checked ~ .register-link {
+  color: var(--main-color) !important;
+  text-shadow: 0 0 10px var(--main-color);
+}
+.register-link p a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.5s ease;
+}
+.register-link p a:hover {
+  text-decoration: underline !important;
+}
+.input-check:checked ~ .register-link p a {
+  color: var(--main-color) !important;
+}
+
+/* .toggle-color {
+  position: absolute;
+  top: 150px;
+  right: -70px;
+  width: 60px;
+  height: 120px;
+  background: #191919;
+  border-radius: 10px;
+}
+.toggle-color:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 80%;
+  background: #000;
+}
+.toggle-color:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45px;
+  height: 45px;
+  background: #333;
+  border: 2px solid #191919;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s ease;
+}
+.color-check:checked ~ .toggle-color:after {
+  top: 65px;
+}
+.color-check {
+  position: absolute;
+  top: 180px;
+  right: -70px;
+  z-index: 1;
+  opacity: 0;
+}
+.toggle-color .color {
+  position: absolute;
+  top: 17px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 1em;
+  z-index: 1;
+  text-transform: uppercase;
+  pointer-events: none;
+  transition: 0.5s ease;
+}
+.toggle-color .color.off {
+  opacity: 1;
+}
+.color-check:checked ~ .toggle-color .color.off {
+  top: 76px;
+  opacity: 0;
+}
+.color-check:checked ~ .toggle-color .color.off.active {
+  top: 76px;
+  opacity: 0;
+}
+.toggle-color .color.on {
+  opacity: 0;
+}
+.color-check:checked ~ .toggle-color .color.on {
+  top: 76px;
+  opacity: 1;
+  color: var(--main-color) !important;
+  text-shadow: 0 0 15px var(--main-color), 0 0 30px var(--main-color), 0 0 45px var(--main-color),
+    0 0 60px var(--main-color);
+}
+.color-check:checked ~ .toggle-color .color.on.active {
+  top: 76px;
+  opacity: 1;
+  color: var(--main-color) !important;
+  text-shadow: 0 0 15px var(--main-color), 0 0 30px var(--main-color), 0 0 45px var(--main-color),
+    0 0 60px var(--main-color);
+} */

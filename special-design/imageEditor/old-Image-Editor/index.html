@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Editor</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/master.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=
+  Cairo:wght@300;400;700&family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+<link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="img">
+        <!-- <div class="fixed"> -->
+          <div class="show">Upload Photo</div>
+          <div class="img-box">
+            <img id="img"/>
+            <canvas id="canvas"></canvas>
+          </div>
+          <div class="upload">
+            <label for="upload">Upload</label>
+            <input type="file" id="upload" />
+          </div>
+        <!-- </div> -->
+      </div>
+      <div class="filters">
+        <ul>
+          <li class="styles">
+            <label for="saturate">Saturate</label>
+            <label for="contrast">Contrast</label>
+            <label for="brightness">Brightness</label>
+            <label for="sepia">Sepia</label>
+            <label for="grayscale">Grayscale</label>
+            <label for="blur">Blur</label>
+            <label for="hue-rotate">Hue Rotate</label>
+            <label for="opacity">Opacity</label>
+            <label for="invert">Invert</label>
+          </li>
+          <li class="range">
+            <input type="range" class="active" id="saturate"  step=".1"  min="0"  max="20"  value="1"/>
+            <input type="range" id="contrast"  step=".1"  min="0"  max="10"  value="1"/>
+            <input type="range" id="brightness"  step="0.1"  min="0"  max="6"  value="1"/>
+            <input type="range" id="sepia"  step=".1"  min="0"  max="1"  value="0"/>
+            <input type="range" id="grayscale"  step=".1"  min="0"  max="1"  value="0"/>
+            <input type="range" id="blur"  step=".1"  min=".6"  max="5"  value="0"/>
+            <input type="range" id="hue-rotate" min="0" max="350" value="0" />
+            <input type="range" id="opacity"  step=".1"  min="0"  max="1"  value="1"/>
+            <input type="range" id="invert"  step=".1"  min="0"  max="1"  value="0"/>
+          </li>
+          <li class="rotate">
+            <div class="options">
+              <label for="" class="tittle">Rotate & Flip</label>
+              <button id="left"><i class="fa-solid fa-rotate-left "></i></button>
+              <button id="right"><i class="fa-solid fa-rotate-right "></i></button>
+              <button id="vertical"><i class="bx bx-reflect-vertical "></i></button>
+              <button id="horizontal"><i class="bx bx-reflect-horizontal "></i></button>
+              <div class="rotatePx">
+                <input type="range" id="rotate" min="0" max="360" />
+              </div>
+            </div>
+          </li>
+          <li class="check-shadow">
+            <label class="checBox">
+              <label for="drop-shadow">Drop Shadow</label>
+              <input class="toggle-checkbox" type="checkbox" id="drop-shadow" />
+              <div class="toggle-switch"></div>
+            </label>
+            <ul class="dropShow">
+              <li class="styles-dropShow">
+                <label for="horizonatal-shadow">Horizonatal Shadow</label>
+                <label for="vertical-shadow">Vertical Shadow</label>
+                <label for="blur-shadow"> Blur Shadow</label>
+              </li>
+              <li class="range-dropShow">
+                <input type="range" class="active" id="horizonatal-shadow" step="1" min="-200" max="200" value="0"/>
+                <input type="range" id="vertical-shadow" step="1" min="-200" max="200" value="0"/>
+                <input type="range" id="blur-shadow" step="1" min="0" max="200" value="0" />
+              </li>
+              <li>
+                <label for="color-shadow"> Color</label>
+                <input type="color" id="color-shadow" value="#ffffff" />
+              </li>
+            </ul>
+          </li>
+          <li class="frame">
+            <p>What is your want Photo Frame?</p>
+            <div>
+              <div>
+                <input class="imgFrame" type="radio" id="jpeg" name="frame" />
+                <label for="jpeg">JPEG</label>
+              </div>
+              <div>
+                <input  class="imgFrame"  type="radio"  id="png"  name="frame"  checked/>
+                <label for="png">PNG</label>
+              </div>
+              <div>
+                <input class="imgFrame" type="radio" id="gif" name="frame" />
+                <label for="gif">GIF</label>
+              </div>
+              <div>
+                <input  class="imgFrame"  type="radio"  id="svg+xml"  name="frame"/>
+                <label for="svg+xml">SVG</label>
+              </div>
+              <div>
+                <input class="imgFrame" type="radio" id="webp" name="frame" />
+                <label for="webp">WebP</label>
+              </div>
+            </div>
+          </li>
+          <li>
+            <span class="reset">Reset</span>
+            <a download="image" id="download">Download</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
+
+
+<!-- <div class= "options">
+  <label for="" class="tittle">Rotate & Flip</label>
+  <button><i class="fa-solid fa-rotate-left"></i></button>
+  <button><i class="fa-solid fa-rotate-right"></i></button>
+  <button><i class="bx bx-reflect-vertical"></i></button>
+  <button><i class="bx bx-reflect-horizontal"></i></button>
+</div> -->

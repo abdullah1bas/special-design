@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=
+  Cairo:wght@300;400;700&family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <!-- يخبر المتصفح بالانتظار حتى تنتهي الصفحة انتهى التحليل قبل تنفيذ البرنامج النصي -->
+    <!-- <script src="js/main.js" defer></script> -->
+  </head> 
+  <body>
+    <div class="alert-login position-absolute translate-middle top-50 start-50 w-100 h-100 d-flex justify-content-center align-items-center">
+      <div class="message-login p-3 bg-dark text-white-50 rounded-3">
+        <h4>enter data same as like this Example :</h4>
+        <h5>Email: <span class="text-info">aaa@gmail.com</span></h5>
+        <h5>Password: <span class="text-info">12#$Aabc</span></h5>
+        <div class="btn rounded-pill d-block fs-5 fw-bold m-auto mt-4 mb-2 text-black-50 alert-btn">OK</div>
+      </div>
+    </div>
+    
+    <div class="login d-flex justify-content-center align-items-center bg-dark overflow-hidden position-relative">
+
+      <div class="login-light position-absolute start-50 translate-middle-x" data-color="#00f7ff"></div>
+      <div class="login-light2 position-absolute start-50 translate-middle-x" data-color="#01fb00"></div>
+      <div class="login-shadow"></div>
+      <div class="login-box position-relative d-flex justify-content-center align-items-center">
+        <form action="#">
+          <input type="checkbox" class="input-check position-absolute" id="input-check" />
+          <label for="input-check" class="toggle position-absolute Blue">
+            <span class="text off active position-absolute start-50 translate-middle-x text-white fs-6 text-uppercase">off</span>
+            <span class="text on position-absolute start-50 translate-middle-x text-white fs-6 text-uppercase">on</span>
+          </label>
+          
+
+          <h2 class="fs-2 text-white text-center mb-4">Login</h2>
+          <div class="input-box position-relative mt-4 mb-2 mx-0 border-bottom border-white border-3">
+            <span class="icon position-absolute text-white fs-5"><ion-icon name="mail"></ion-icon></span>
+            <input id="email" class="w-100 bg-transparent border-0 fs-6 text-white py-0 pe-4 ps-2" type="email" required />
+            <label class="position-absolute top-50 translate-middle-y text-white fs-6">Email</label>
+            <div class="input-line position-absolute start-0 w-100 bg-white"></div>
+          </div>
+          <ul class="requirement-email pb-4 mb-2 position-relative">
+            <li class="list-unstyled  align-items-center mb-3 position-absolute top-0 start-0">
+              <i class="fa-solid fa-circle fs-6"></i>
+              <span class="ms-2">Enter Input(..@gmail.com)</span>
+            </li>
+            <li class="list-unstyled fs-6  align-items-center mb-3 position-absolute top-0 start-0">
+              <i class="fa-solid fa-circle "></i>
+              <span class="ms-2">Now, You Can Enter</span>
+            </li>
+          </ul>
+          <div class="input-box position-relative mt-4 mb-2 mx-0 border-bottom border-white border-3">
+            <span class="icon position-absolute text-white fs-5"><ion-icon class="lock" name="lock-closed"></ion-icon></span>
+            <input id="password" class="w-100 bg-transparent border-0 fs-6 text-white py-0 pe-4 ps-2" type="password" required />
+            <label class="position-absolute top-50 translate-middle-y text-white fs-6">Password</label>
+            <div class="input-line position-absolute start-0 w-100 bg-white">
+              <div class="prog"></div>
+            </div>
+          </div>
+          <ul class="requirement-password p-0 position-relative">
+            <li class="list-unstyled  align-items-center mb-3 position-absolute">
+              <i class="fa-solid fa-circle fs-6"></i>
+              <span class="ms-2">Enter Input ([A-Za-z0-9] [!#$@..] [8..char])</span>
+            </li>
+            <li class="list-unstyled fs-6  align-items-center mb-3 position-absolute">
+              <i class="fa-solid fa-circle "></i>
+              <span class="ms-2">Now, You Can Enter</span>
+            </li>
+          </ul>
+
+          <div class="remember-forgot text-white fs-6 d-flex justify-content-between">
+            <label><input class="ms-1" type="checkbox" /> Remember me</label>
+            <a class="text-white text-decoration-none" href="#">Forgot Password?</a>
+          </div>
+          <a class="button-login text-dark w-100 bg-white border-0 fs-6 fw-bold btn rounded-pill" href="special-design/index.html">Login</a>
+          <!-- <button class="w-100 bg-white border-0 fs-6 fw-bold" type="submit">Login</button> -->
+          <div class="register-link text-white fs-6 text-center mt-4 mx-0 mb-2">
+            <p>Don't have an account? <a href="#">Register</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/login.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <!-- <script src="js/bootstrap.bundle.min.js"></script> -->
+    <!-- <script src="js/all.min.js"></script> -->
+  </body>
+</html>

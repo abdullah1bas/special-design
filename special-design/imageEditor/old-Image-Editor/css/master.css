@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+ul li {
+  list-style: none;
+  display: flex;
+}
+body {
+  background: #333;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  background-color: #222;
+  width: 85vw;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  /* display: grid;
+  grid-template-columns: 5fr 3fr; */
+}
+@media (max-width: 767px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .img img,
+  canvas {
+    max-width: 80vw;
+  }
+}
+.img {
+  /* max-width: 80%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+  margin-bottom: 20px;
+}
+.img .img-box {
+  overflow: hidden;
+}
+.img .img-box img {
+  /* transform: rotate(0deg); */
+  /* overflow: hidden; */
+  /* width: 100%;
+  height: 100%; */
+  max-width: 490px;
+  max-height: 335px;
+  object-fit: contain;
+}
+
+/* .container .img .upload {
+  margin-top: 40px;
+} */
+.container .img .show {
+  width: 300px;
+  height: 300px;
+  border: 1px dashed #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 25px;
+}
+.upload input {
+  display: none;
+}
+.upload label {
+  color: #fff;
+  padding: 8px 20px;
+  border: 2px dashed #fff;
+  cursor: pointer;
+}
+.filters {
+  padding: 20px;
+}
+.filters ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 10px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+}
+.filters ul .styles {
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.filters ul .styles label {
+  padding: 10px 0;
+  color: black;
+  background: white;
+  flex-basis: 19%;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
+}
+@media (max-width: 991px) {
+  .filters ul .styles label {
+    flex-basis: 23%;
+  }
+}
+@media (max-width: 767px) {
+  .filters ul .styles label {
+    flex-basis: 22%;
+  }
+}
+.filters ul .styles label:hover {
+  background: #eee;
+}
+.filters ul .range {
+  position: relative;
+}
+.filters ul li [type="range"] {
+  position: absolute;
+  width: 100%;
+  display: none;
+}
+.filters ul li .active {
+  display: flex;
+}
+@media (max-width: 767px) {
+  .filters ul li [type="range"] {
+    width: 100%;
+  }
+}
+.filters ul .rotate {
+  padding-top: 25px;
+  display: flex;
+  align-items: center;
+}
+.filters ul .rotate .options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+}
+.filters ul .rotate .options label {
+  font-size: 20px;
+}
+.filters ul .rotate .options .rotatePx {
+  display: none;
+}
+.filters ul .rotate .options button i {
+  font-size: 25px;
+  padding: 5px;
+  cursor: pointer;
+}
+.filters ul li:not().check-shadow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.filters ul .check-shadow {
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 0 10px;
+}
+
+.filters ul li .checBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.filters ul li label {
+  color: #fff;
+}
+
+.filters ul li:last-child {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+@media (max-width: 767px) {
+  .filters ul li:last-child {
+    padding-top: 10px;
+    align-items: center;
+  }
+}
+.filters ul li .dropShow .styles-dropShow {
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+}
+.filters ul li .dropShow .styles-dropShow label {
+  padding: 10px 0;
+  color: black;
+  background: white;
+  flex-basis: 25%;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
+}
+@media (max-width: 991px) {
+  .filters ul li .dropShow .styles-dropShow label {
+    flex-basis: 23%;
+  }
+}
+@media (max-width: 767px) {
+  .filters ul li .dropShow .styles-dropShow label {
+    flex-basis: 22%;
+  }
+}
+.filters ul li .dropShow .styles-dropShow label:hover {
+  background-color: #eee;
+}
+.filters ul li .dropShow .range-dropShow {
+  position: relative;
+}
+.filters ul li .dropShow [type="range"] {
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .filters ul li .dropShow [type="range"] {
+    width: 100%;
+  }
+}
+.filters ul li .dropShow li:last-child {
+  margin: 20px 0 10px;
+}
+.filters ul li .drop-shadow li span {
+  font-size: 10px;
+}
+#color-shadow {
+  width: 60px;
+  height: 20px;
+  padding: 16px 60px;
+  border-radius: 10px;
+  border: none;
+}
+.filters ul li a,
+.reset {
+  color: #fff;
+  padding: 10px 20px;
+  background: #060;
+  cursor: pointer;
+  text-decoration: none;
+}
+@media (max-width: 767px) {
+  .filters ul .frame {
+    flex-direction: column;
+  }
+}
+.filters ul .frame p {
+  margin-right: auto;
+  color: #fff;
+}
+@media (max-width: 767px) {
+  .filters ul .frame p {
+    margin-bottom: 15px;
+  }
+}
+.filters ul .frame div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+@media (max-width: 767px) {
+  .filters ul .frame div {
+    margin-left: 0;
+  }
+}
+.filters ul .frame div > div > input {
+  margin-right: 10px;
+}
+.toggle-checkbox {
+  --webkit-appearance: none;
+  appearance: none;
+  /* hena kda 5fenah 5als */
+  display: none;
+}
+.toggle-switch {
+  background-color: #ccc;
+  width: 78px;
+  height: 32px;
+  border-radius: 16px;
+  position: relative;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.toggle-switch::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f00d";
+  font-weight: 900;
+  background-color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aaa;
+  transition: 0.3s;
+}
+.toggle-checkbox:checked + .toggle-switch {
+  background-color: #0075ff;
+}
+.toggle-checkbox:checked + .toggle-switch::before {
+  content: "\f00c";
+  /* hena b2a hnseeb 4px-r= 4+50 left=54px +24px width =78px >> all width  */
+  left: 50px;
+  color: #0075ff;
+}
