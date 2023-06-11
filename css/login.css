@@ -112,6 +112,19 @@
     transform: rotate(-90deg);
   }
 }
+@media (max-width: 500px) {
+  .login-box {
+    height: 530px;
+    margin-top: 30px;
+  }
+  .toggle {
+    position: absolute;
+    right: 0;
+    left: 50px;
+    top: 430px;
+    transform: rotate(-90deg);
+  }
+}
 
 .toggle:before {
   content: "";
@@ -343,88 +356,3 @@ h2 {
 .input-check:checked ~ .register-link p a {
   color: var(--main-color) !important;
 }
-
-/* .toggle-color {
-  position: absolute;
-  top: 150px;
-  right: -70px;
-  width: 60px;
-  height: 120px;
-  background: #191919;
-  border-radius: 10px;
-}
-.toggle-color:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 10px;
-  height: 80%;
-  background: #000;
-}
-.toggle-color:after {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 45px;
-  height: 45px;
-  background: #333;
-  border: 2px solid #191919;
-  border-radius: 10px;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  transition: 0.5s ease;
-}
-.color-check:checked ~ .toggle-color:after {
-  top: 65px;
-}
-.color-check {
-  position: absolute;
-  top: 180px;
-  right: -70px;
-  z-index: 1;
-  opacity: 0;
-}
-.toggle-color .color {
-  position: absolute;
-  top: 17px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #fff;
-  font-size: 1em;
-  z-index: 1;
-  text-transform: uppercase;
-  pointer-events: none;
-  transition: 0.5s ease;
-}
-.toggle-color .color.off {
-  opacity: 1;
-}
-.color-check:checked ~ .toggle-color .color.off {
-  top: 76px;
-  opacity: 0;
-}
-.color-check:checked ~ .toggle-color .color.off.active {
-  top: 76px;
-  opacity: 0;
-}
-.toggle-color .color.on {
-  opacity: 0;
-}
-.color-check:checked ~ .toggle-color .color.on {
-  top: 76px;
-  opacity: 1;
-  color: var(--main-color) !important;
-  text-shadow: 0 0 15px var(--main-color), 0 0 30px var(--main-color), 0 0 45px var(--main-color),
-    0 0 60px var(--main-color);
-}
-.color-check:checked ~ .toggle-color .color.on.active {
-  top: 76px;
-  opacity: 1;
-  color: var(--main-color) !important;
-  text-shadow: 0 0 15px var(--main-color), 0 0 30px var(--main-color), 0 0 45px var(--main-color),
-    0 0 60px var(--main-color);
-} */
