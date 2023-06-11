@@ -112,16 +112,16 @@
     transform: rotate(-90deg);
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 400px) {
   .login-box {
-    height: 530px;
+    height: 500px;
     margin-top: 30px;
   }
   .toggle {
     position: absolute;
     right: 0;
     left: 50px;
-    top: 430px;
+    top: 410px;
     transform: rotate(-90deg);
   }
 }
