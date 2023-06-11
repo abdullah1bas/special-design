@@ -754,7 +754,7 @@ html::-webkit-scrollbar-track {
   0%, 100% {
     top: 5%;
   }50% {
-    top: 90%;
+    top: 89%;
   }
 }
 .timeline .timeline-content .left::before {
