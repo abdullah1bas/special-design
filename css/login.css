@@ -28,6 +28,9 @@
     font-size: 16px;
     color: white;
   }
+  .mess-cont {
+    width: 80% !important;
+  }
 }
 @media (max-width: 500px) {
   .message-login h4 {
@@ -37,6 +40,12 @@
   .message-login h5 {
     font-size: 12px;
     color: white;
+  }
+  .mess-cont {
+    width: 100% !important;
+  }
+  .mess-cont .mess-one {
+    font-size: 16px !important;
   }
 }
 .alert-btn {

@@ -100,9 +100,11 @@ passwordInput.addEventListener("keyup", (e) => {
 
 let clickCount = 0;
 buttonLogin.onclick = function (e) {
-  if (!validEmail || !validPassWord) e.preventDefault();
+  if (!validEmail || !validPassWord) {
+    e.preventDefault();
+    handleClick();
+  }
 
-  handleClick();
 };
 
 function handleClick() {
