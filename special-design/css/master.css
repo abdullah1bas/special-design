@@ -334,7 +334,7 @@ html::-webkit-scrollbar-track {
 }
 .landing-page .header-area {
   position: relative;
-  background: #211e1e;
+  background: none;
   z-index: 1000;
 }
 .header-area .logo {

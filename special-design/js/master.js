@@ -401,13 +401,13 @@ if (scrollLocalItem !== null) {
     handleYesNo(scrollNav, scrollLocalItem);
     document.querySelector(
       ".header-area"
-    ).style = `position: fixed; z-index: 1000; width: 100%; margin: auto; padding: 10px; color: #fff; background: #211e1e;`;
+    ).style = `position: fixed; z-index: 1000;  background: #211e1e;`;
   } else {
     scrollLocalItem = false;
     handleYesNo(scrollNav, scrollLocalItem);
     document.querySelector(
       ".header-area"
-    ).style = `position: relative; z-index: 1000; width: 100%; margin: auto; padding: 10px; color: #fff; background: none;`;
+    ).style = `position: relative; z-index: 1000;  background: none;`;
   }
 }
 scrollNav.forEach(function (span) {
@@ -421,13 +421,13 @@ scrollNav.forEach(function (span) {
       localStorage.setItem("scroll_option", true);
       document.querySelector(
         ".header-area"
-      ).style = `position: fixed; z-index: 1000; width: 100%; margin: auto; padding: 10px; color: #fff; background: #211e1e;`;
+      ).style = `position: fixed; z-index: 1000;  background: #211e1e;`;
     } else {
       bulletsOption = false;
       localStorage.setItem("scroll_option", false);
       document.querySelector(
         ".header-area"
-      ).style = `position: relative; z-index: 1000; width: 100%; margin: auto; padding: 10px; color: #fff; background: none;`;
+      ).style = `position: relative; z-index: 1000;  background: none;`;
     }
   });
 });
@@ -476,7 +476,7 @@ document.querySelector(".reset-options").onclick = function () {
   handleYesNo(scrollNav, false);
   document.querySelector(
     ".header-area"
-  ).style = `position: relative; z-index: 1000; width: 100%; margin: auto; padding: 10px; color: #fff; background: none;`;
+  ).style = `position: relative; z-index: 1000;  background: none;`;
 };
 
 // kda al browser hy3mel reload
