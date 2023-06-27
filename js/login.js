@@ -10,18 +10,19 @@ const alertBtn = document.querySelector(".alert-btn"),
   requirementPass = document.querySelectorAll(".requirement-password li"),
   inputCheck = document.querySelector(".input-check");
 
-inputCheck.onclick = function(e) {
-  if(e.target.checked) {
-    document.querySelector(".login-shadow").style.top = '0'
-    document.querySelector(".toggle .text.off").style = 'top: 76px; opacity: 0;'
-    document.querySelector(".toggle .text.on").style = 'top: 76px; opacity: 1; color: var(--main-color) !important; text-shadow: 0 0 15px var(--main-color), 0 0 30px var(--main-color), 0 0 45px var(--main-color), 0 0 60px var(--main-color);'
+inputCheck.onclick = function (e) {
+  if (e.target.checked) {
+    document.querySelector(".login-shadow").style.top = "0";
+    document.querySelector(".toggle .text.off").style =
+      "top: 76px; opacity: 0;";
+    document.querySelector(".toggle .text.on").style =
+      "top: 76px; opacity: 1; color: var(--main-color) !important; text-shadow: 0 0 15px var(--main-color), 0 0 30px var(--main-color), 0 0 45px var(--main-color), 0 0 60px var(--main-color);";
   } else {
-    document.querySelector(".login-shadow").style.top = '-100%' 
-    document.querySelector(".toggle .text.off").style = 'opacity: 1;'
-    document.querySelector(".toggle .text.on").style = 'opacity: 0;'
+    document.querySelector(".login-shadow").style.top = "-100%";
+    document.querySelector(".toggle .text.off").style = "opacity: 1;";
+    document.querySelector(".toggle .text.on").style = "opacity: 0;";
   }
-
-}
+};
 
 lightOne.onclick = function (e) {
   document.documentElement.style.setProperty(
@@ -53,6 +54,11 @@ let validPassWord;
 let validEmail;
 
 emailInput.addEventListener("keyup", (e) => {
+  if (e.target.value == "") {
+    document.querySelector(".placeholders-in").style.display = "block";
+  } else {
+    document.querySelector(".placeholders-in").style.display = "none";
+  }
   if (/\w*@gmail.com/g.test(e.target.value)) {
     requirementEmail[1].firstElementChild.className = "fa-solid fa-check";
     requirementEmail.forEach((li) => {
@@ -69,8 +75,19 @@ emailInput.addEventListener("keyup", (e) => {
     validEmail = false;
   }
 });
+emailInput.onfocus = () => {
+  if(emailInput.value == '') document.querySelector(".placeholders-in").style.display = "block";
+};
+emailInput.onblur = () => {
+  document.querySelector(".placeholders-in").style.display = "none";
+};
 var progress = document.querySelector(".prog");
 passwordInput.addEventListener("keyup", (e) => {
+  if (e.target.value == "") {
+    document.querySelector(".placeholders-pass").style.display = "block";
+  } else {
+    document.querySelector(".placeholders-pass").style.display = "none";
+  }
   if (
     /[A-Z]/.test(e.target.value) &&
     /[^A-Za-z0-9]/.test(e.target.value) &&
@@ -93,32 +110,42 @@ passwordInput.addEventListener("keyup", (e) => {
     validPassWord = false;
   }
   // console.log(e.target.value.length)
-  if(((e.target.value.length * 100) / 8) <= 100) progress.style.width = `${(e.target.value.length * 100) / 8}%`;
+  if ((e.target.value.length * 100) / 8 <= 100)
+    progress.style.width = `${(e.target.value.length * 100) / 8}%`;
   // console.log()
 });
-
-
+passwordInput.onfocus = () => {
+  if(passwordInput.value == '') document.querySelector(".placeholders-pass").style.display = "block";
+};
+passwordInput.onblur = () => {
+  document.querySelector(".placeholders-pass").style.display = "none";
+};
 let clickCount = 0;
 buttonLogin.onclick = function (e) {
   if (!validEmail || !validPassWord) {
     e.preventDefault();
     handleClick();
   }
-
 };
 
 function handleClick() {
   clickCount++;
   if (clickCount === 2) {
-    showMessage("من فضلك بعد اذنك ادخل البيانات كما موضح بالشروط" , 5);
+    showMessage("من فضلك بعد اذنك ادخل البيانات كما موضح بالشروط", 5);
   } else if (clickCount === 5) {
-    showMessage("يا استاذ بعد اذنك مش عايز غباء نفذ الشروط كما موضح تحت الحقول", 8);
+    showMessage(
+      "يا استاذ بعد اذنك مش عايز غباء نفذ الشروط كما موضح تحت الحقول",
+      8
+    );
   } else if (clickCount === 8) {
-    showMessage("بقولك ايه فكك من الحوار ده هيفيدك بأيه لما تدخل شوف انت رايح فين", 10);
-    clickCount= 7;
+    showMessage(
+      "بقولك ايه فكك من الحوار ده هيفيدك بأيه لما تدخل شوف انت رايح فين",
+      10
+    );
+    clickCount = 7;
   }
 }
-function showMessage(message , time) {
+function showMessage(message, time) {
   const messageContainer = document.createElement("div");
   messageContainer.className = "mess-cont";
   const messageElement = document.createElement("p");
@@ -142,16 +169,16 @@ function showMessage(message , time) {
   }, time * 1000);
 }
 
-document.querySelector(".message-login").onclick = function(e) {
+document.querySelector(".message-login").onclick = function (e) {
   e.stopPropagation();
   alertBtn.onclick = function (e) {
     e.target.parentElement.parentElement.classList.add("d-none");
   };
-}
-document.addEventListener("click", e => {
-  if (!e.target.classList.contains("message-login")) document.querySelector(".alert-login").classList.add("d-none");
-})
-
+};
+document.addEventListener("click", (e) => {
+  if (!e.target.classList.contains("message-login"))
+    document.querySelector(".alert-login").classList.add("d-none");
+});
 
 setTimeout(function () {
   // let alertLogin = document.createElement("div");

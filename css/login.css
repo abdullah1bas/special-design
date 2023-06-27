@@ -244,7 +244,6 @@ h2 {
   text-shadow: 0 0 10px var(--main-color);
 }
 
-
 .input-box input {
   height: 50px;
   outline: none;
@@ -254,6 +253,14 @@ h2 {
   color: var(--main-color) !important;
   text-shadow: 0 0 5px var(--main-color);
 }
+.input-box .placeholders-in {
+  top: 12px;
+  display: none;
+} 
+.input-box .placeholders-pass {
+  top: 12px;
+  display: none;
+} 
 
 .input-box .input-line {
   bottom: -3px;
