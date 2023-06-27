@@ -457,8 +457,8 @@ function handleActiveEvent(ev) {
 // -------------------------------------------------------------
 // hena lw mesh 3ayzeno my3mlsh reload
 document.querySelector(".reset-options").onclick = function () {
-  document.documentElement.style.setProperty("--main-color", "#ff9800");
-  localStorage.setItem("color_option", "#ff9800");
+  document.documentElement.style.setProperty("--main-color", "#e91e63");
+  localStorage.setItem("color_option", "#e91e63");
   colorsLi.forEach((color) => {
     color.classList.remove("active");
     if (color.id === "reset") color.classList.add("active");

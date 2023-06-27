@@ -333,6 +333,7 @@ html::-webkit-scrollbar-track {
   z-index: 1;
 }
 .landing-page .header-area {
+  position: relative;
   background: #211e1e;
   z-index: 1000;
 }
@@ -352,7 +353,7 @@ html::-webkit-scrollbar-track {
   -webkit-text-stroke: 0px #333;
   position: relative;
   /* steps() de bt3mel al action 3la kam mrh fe 5lal time  */
-  animation: control-width 3s steps(14) 3.5s both, blink 0.5s infinite;
+  animation: control-width 3s steps(14) 3.5s both, blinks 0.5s infinite;
   font-size: 24px;
 }
 @media (max-width: 400px) {
@@ -491,10 +492,11 @@ html::-webkit-scrollbar-track {
   width: fit-content;
 }
 .introduction-text h1 {
+  line-height: 1.5;
   width: 100%;
   white-space: nowrap;
   border-right: 2px solid var(--main-color);
-  animation: control-h-width 4s steps(22) 3.5s both, blink 0.5s infinite;
+  animation: control-h-width 4s steps(22) 3.5s both, blinks 0.5s infinite;
 }
 @keyframes control-h-width {
   from {
@@ -505,7 +507,7 @@ html::-webkit-scrollbar-track {
   }
 }
 
-@keyframes blink {
+@keyframes blinks {
   from {
     border-right-color: var(--main-color);
   }
