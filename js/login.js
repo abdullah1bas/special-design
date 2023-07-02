@@ -109,10 +109,8 @@ passwordInput.addEventListener("keyup", (e) => {
     requirementPass[0].firstElementChild.className = "fa-solid fa-circle";
     validPassWord = false;
   }
-  // console.log(e.target.value.length)
   if ((e.target.value.length * 100) / 8 <= 100)
     progress.style.width = `${(e.target.value.length * 100) / 8}%`;
-  // console.log()
 });
 passwordInput.onfocus = () => {
   if(passwordInput.value == '') document.querySelector(".placeholders-pass").style.display = "block";
@@ -159,8 +157,11 @@ function showMessage(message, time) {
   messageContainer.appendChild(messageElement);
   messageContainer.appendChild(alertBtn);
 
+  document.querySelector(".message-login").onclick =  e => e.stopPropagation();
+
   alertBtn.onclick = function (e) {
     e.target.parentElement.classList.add("d-none");
+    e.target.parentElement.parentElement.classList.add("d-none");
   };
 
   document.body.appendChild(messageContainer);
@@ -169,18 +170,11 @@ function showMessage(message, time) {
   }, time * 1000);
 }
 
-document.querySelector(".message-login").onclick = function (e) {
-  e.stopPropagation();
-  alertBtn.onclick = function (e) {
-    e.target.parentElement.parentElement.classList.add("d-none");
-  };
-};
 document.addEventListener("click", (e) => {
   if (!e.target.classList.contains("message-login"))
     document.querySelector(".alert-login").classList.add("d-none");
 });
 
 setTimeout(function () {
-  // let alertLogin = document.createElement("div");
   document.querySelector(".alert-login").classList.add("d-none");
 }, 30000);
