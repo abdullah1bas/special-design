@@ -119,6 +119,7 @@ passwordInput.onblur = () => {
   document.querySelector(".placeholders-pass").style.display = "none";
 };
 let clickCount = 0;
+
 buttonLogin.onclick = function (e) {
   if (!validEmail || !validPassWord) {
     e.preventDefault();
@@ -148,20 +149,19 @@ function showMessage(message, time) {
   messageContainer.className = "mess-cont";
   const messageElement = document.createElement("p");
   messageElement.className = "mess-one";
-  const alertBtn = document.createElement("div");
-  alertBtn.appendChild(document.createTextNode("Ok"));
-  alertBtn.className = `btn rounded-pill d-block fs-5 fw-bold m-auto mt-4 mb-2 text-black-50 alert-btn`;
-  messageContainer.style = `position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: black; padding: 10px; width: 500px; height: 200px; display: flex; align-items: center; justify-content: center; flex-direction: column; border-radius: 6px;`;
+  const alertBtnShow = document.createElement("div");
+  alertBtnShow.appendChild(document.createTextNode("Ok"));
+  alertBtnShow.className = `btn rounded-pill d-block fs-5 fw-bold m-auto mt-4 mb-2 text-black-50 alert-btn`;
+  messageContainer.style = `position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: black; padding: 10px; width: 500px; height: 200px; display: flex; align-items: center; justify-content: center; flex-direction: column; border-radius: 6px; z-index: 11;`;
   messageElement.style = `color: white; font-size: 20px;`;
   messageElement.appendChild(document.createTextNode(message));
   messageContainer.appendChild(messageElement);
-  messageContainer.appendChild(alertBtn);
+  messageContainer.appendChild(alertBtnShow);
 
   document.querySelector(".message-login").onclick =  e => e.stopPropagation();
 
-  alertBtn.onclick = function (e) {
+  alertBtnShow.onclick = function (e) {
     e.target.parentElement.classList.add("d-none");
-    e.target.parentElement.parentElement.classList.add("d-none");
   };
 
   document.body.appendChild(messageContainer);
@@ -169,6 +169,13 @@ function showMessage(message, time) {
     messageContainer.classList.add("d-none");
   }, time * 1000);
 }
+
+document.querySelector(".message-login").onclick = function (e) {
+  e.stopPropagation();
+};
+alertBtn.onclick = function (e) {
+  e.target.parentElement.parentElement.classList.add("d-none");
+};
 
 document.addEventListener("click", (e) => {
   if (!e.target.classList.contains("message-login"))
