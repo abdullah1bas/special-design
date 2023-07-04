@@ -1,6 +1,6 @@
 import * as all from "./editor.js";
 
-let backgroundOption = true;
+let backgroundOption = false;
 let backgroundInterval;
 let bulletsOption = true;
 let scrollOption = true;
@@ -13,18 +13,6 @@ let backgroundLocalItem = localStorage.getItem("background_option");
 let bulletLocalItem = localStorage.getItem("bullet_option");
 let scrollLocalItem = localStorage.getItem("scroll_option");
 
-// const logoText = document.getElementById("logo-text");
-// let count = 0;
-
-// console.log(logoText.textContent.length);
-// let xInterval = setInterval(() => {
-//   if (count === logoText.textContent.length) {
-//     count = 0;
-//   }
-
-//   logoText.style.width = `${count * 8}px`;
-//   count++;
-// }, 100);
 
 if (mainColors !== null) {
   document.documentElement.style.setProperty("--main-color", mainColors);
