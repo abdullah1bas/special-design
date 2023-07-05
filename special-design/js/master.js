@@ -1,6 +1,6 @@
 import * as all from "./editor.js";
 
-let backgroundOption = false;
+let backgroundOption = true;
 let backgroundInterval;
 let bulletsOption = true;
 let scrollOption = true;
@@ -263,7 +263,7 @@ function randomizeImgs() {
     clearInterval(backgroundInterval);
   }
 }
-// randomizeImgs();
+randomizeImgs();
 
 // console.log(counter)
 
