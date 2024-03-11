@@ -637,7 +637,7 @@ document.addEventListener("click", function (e) {
 
 
   const x = setInterval(function () {
-    const countDown = new Date('2023-12-31 23:59:59');
+    const countDown = new Date('2025-12-31 23:59:59');
     const now = new Date().getTime();
     const distance = countDown - now;
 
@@ -655,6 +655,8 @@ document.addEventListener("click", function (e) {
         restMinute < 10 ? `0${restMinute}` : restMinute;
       countDate[3].textContent =
         restSecond < 10 ? `0${restSecond}` : restSecond;
+    }else {
+      clearInterval(x);
     }
   }, 1000);
 })();
